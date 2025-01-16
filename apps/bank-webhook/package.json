@@ -1,9 +1,10 @@
 {
   "name": "bank-webhook",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild src/index.ts --platform=node --bundle --outdir=dist",
+    "dev": "concurrently \"esbuild src/index.ts --platform=node --bundle --outdir=dist --watch\" \"nodemon dist/index.js\" "
   },
   "keywords": [],
   "author": "",
@@ -11,7 +12,10 @@
   "description": "",
   "dependencies": {
     "@repo/db": "*",
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.0",
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
     "esbuild": "^0.24.0",
     "express": "^4.21.1"
   }

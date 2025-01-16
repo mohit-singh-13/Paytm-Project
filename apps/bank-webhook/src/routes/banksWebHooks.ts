@@ -5,15 +5,25 @@ export const banksRouter = express.Router();
 banksRouter.post("/", async (req, res) => {
   // Zod validations here.
   // Check is this request actually came from HDFC bank, use a webhook secret here.
-
-  const paymentInformation = {
-    token: req.body.token,
-    userId: req.body.user_identifier,
-    amount: req.body.amount,
-  };
+  const token = req.body.token;
 
   // Update balance in db, add txn.
   try {
+    const result = await prisma.onRampTransaction.findFirst({
+      where: {
+        token,
+      },
+    });
+
+    const userId = result?.userId;
+    const amount = result?.amount;
+
+    const paymentInformation = {
+      token,
+      userId,
+      amount,
+    };
+
     await prisma.$transaction([
       prisma.balance.update({
         where: {

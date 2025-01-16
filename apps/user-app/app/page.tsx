@@ -6,6 +6,7 @@ export default async function Page() {
   const session = await getServerSession(authOptions);
   
   if (session?.user) {
+    console.log("MOHIT SINGH")
     redirect("/dashboard");
   } else {
     redirect("/api/auth/signin");

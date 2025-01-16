@@ -1,8 +1,9 @@
-import prisma from "@repo/db/client";
 import express from "express";
 import { banksRouter } from "./routes/banksWebHooks";
+import { config } from "dotenv";
 const app = express();
 
+config();
 app.use(express.json());
 
 const PORT = process.env.PORT;

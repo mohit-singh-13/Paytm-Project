@@ -15,6 +15,7 @@
   },
   "exports": {
     "./reduxStore": "./src/store.ts",
-    "./reduxHooks": "./src/hook.ts"
+    "./reduxHooks": "./src/hook.ts",
+    "./userFeature": "./src/features/user/userSlice.ts"
   }
 }
