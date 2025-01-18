@@ -6,7 +6,6 @@ import { authOptions } from "../auth";
 
 export async function addMoney(amount: string, provider: string) {
   const session = await getServerSession(authOptions);
-  // console.log(session);
 
   const id: number = session.user.id;
 

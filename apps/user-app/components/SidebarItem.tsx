@@ -24,11 +24,7 @@ const SidebarItem = ({
       }}
     >
       <div className="pr-2">{icon}</div>
-      <div
-        className={`font-bold`}
-      >
-        {title}
-      </div>
+      <div className={`font-bold w-ful`}>{title}</div>
     </div>
   );
 };

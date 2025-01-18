@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoreProvider>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body className={`${geistSans.variable} ${geistMono.variable} bg-[#ebe6e6]`}>
           <AppbarClient />
           {children}
         </body>
