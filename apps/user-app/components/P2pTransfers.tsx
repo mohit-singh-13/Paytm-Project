@@ -13,7 +13,6 @@ export const P2pTransfers = ({
     recipient: number;
   }[];
 }) => {
-  console.log(transactions);
   if (!transactions.length) {
     return (
       <div className="m-8">
@@ -25,7 +24,7 @@ export const P2pTransfers = ({
   }
 
   return (
-    <div className="m-8">
+    <div className="m-8 w-[80%] sm:w-[70%] mx-auto">
       <Card title="P2P Transactions">
         <div className="pt-2">
           {transactions.map((t, idx) => (
